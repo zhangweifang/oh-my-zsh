@@ -201,4 +201,11 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+## add 'new time line'
+build_timeline() {
+  prompt_segment blue black "[$(date +%H:%M:%S)]"
+  prompt_end
+}
+
+PROMPT='%{%f%b%k%}$(build_prompt)
+$(build_timeline) '
