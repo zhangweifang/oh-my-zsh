@@ -256,4 +256,10 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+build_time() {
+	prompt_segment blue black "[$(date +%H:%M:%S)]"
+	prompt_end
+}
+
+PROMPT='%{%f%b%k%}$(build_prompt) 
+%{%f%}$(build_time) '
